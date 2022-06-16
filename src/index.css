@@ -11,3 +11,224 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.rm {
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  border: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.d-flex, .mob-d-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-button{
+  height: 50px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.cross-button{
+  border: none;
+  background-color: transparent;
+  margin-left: 20px;
+}
+
+.container {
+  text-align: center;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 75px;
+  display: inline-block;
+  text-align: left;
+  top: 8px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+}
+
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.inner:before,
+.inner:after {
+  float: left;
+  width: 50%;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.inner:before {
+  content: "YES";
+  padding-left: 10px;
+  background-color: #212529;
+  color: #fff;
+}
+
+.inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+
+.switch {
+  display: block;
+  width: 24px;
+  margin: 5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.checkbox:checked + .label .inner {
+  margin-left: 0;
+}
+
+.checkbox:checked + .label .switch {
+  right: 0px;
+}
+
+.navbar{
+  justify-content: center !important;
+}
+
+.home-title{
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.title{
+  margin: 30px 0;
+  text-align: center;
+}
+
+.form-control{
+  margin: 20px 0px !important;
+}
+
+.card{
+  padding: 20px;
+}
+
+.mar-right{
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.time-input{
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn{
+  height: 38px !important;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.btn-category{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.w-45{
+  width: 40%;
+}
+
+.todo-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: .5rem;
+}
+
+.category-subtext{
+  position: absolute;
+  color: gray;
+  font-size: 12px;
+  top: 18px;
+}
+
+@media screen and (max-width: 900px){
+  .navbar{
+    flex-direction: column;
+  }
+
+  .mob-d-flex{
+    flex-direction: column;
+  }
+
+  .w-45{
+    width: 100%;
+  }
+}
