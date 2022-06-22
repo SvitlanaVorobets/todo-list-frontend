@@ -56,13 +56,14 @@ code {
 }
 
 .category-button{
-  height: 50px;
+  height: 55px;
   width: 100%;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 0.5rem 1rem;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 4px;
   background-color: white;
+  cursor: pointer;
 }
 
 .cross-button{
@@ -80,7 +81,25 @@ code {
   width: 75px;
   display: inline-block;
   text-align: left;
-  top: 8px;
+  margin-left: 20px;
+}
+
+.hide {
+  display: none;
+}
+    
+.toggle-switch:hover + .hide {
+  display: block;
+  color: white;
+  background-color: black;
+  padding: 5px;
+  position: absolute;
+  width: 100px;
+  font-size: 13px;
+  border-radius: 25px;
+  opacity: .75;
+  top: -35px;
+  right: -8px;
 }
 
 .checkbox {
@@ -195,11 +214,10 @@ code {
 
 .btn-category{
   margin-top: 20px;
-  margin-left: 20px;
 }
 
-.w-45{
-  width: 40%;
+.w-65{
+  width: 65%;
 }
 
 .todo-item{
@@ -219,6 +237,20 @@ code {
   top: 18px;
 }
 
+.form-select{
+  margin-left: 30px;
+  height: 38px;
+}
+
+.w-space-nowrap{
+  white-space: nowrap;
+}
+
+.choosen-category{
+  background-color: gainsboro;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 900px){
   .navbar{
     flex-direction: column;
@@ -228,7 +260,11 @@ code {
     flex-direction: column;
   }
 
-  .w-45{
+  .w-65{
     width: 100%;
+  }
+
+  .form-select{
+    margin-left: 0;
   }
 }

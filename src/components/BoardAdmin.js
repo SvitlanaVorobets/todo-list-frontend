@@ -97,7 +97,7 @@ addTodo(title, categoryId, todoDay) {
       <div className="container">
         <header className="jumbotron">
           <h3>{this.state.content}</h3>
-          <Form.Select className="mb-4" value={this.state.selectVal} onChange={(e) => this.choosenUser(e.target.value)}>
+          <Form.Select className="mb-4 m-0" value={this.state.selectVal} onChange={(e) => this.choosenUser(e.target.value)}>
                 <option key={0} value={'No one'}>No one</option>;
                 {this.state.users.map((o) => {
                     const { username, id } = o;

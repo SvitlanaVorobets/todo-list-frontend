@@ -30,13 +30,12 @@ function TodoItem({ todo, i, onChange }) {
                 <input type="checkbox" checked={todo.completed} style={styles.input} onChange={() => onChange(todo.id)}/>
                 <Link to={"/todoitem/" + todo.id} className="d-flex align-items-center w-100 text-dark">
                     <div className="position-relative">
-                        <p className="mb-0">{ todo.title }</p> 
+                        <p className="mb-0 w-space-nowrap">{ todo.title }</p> 
                         <p className="category-subtext">{todo.category ? todo.category.name : ''}</p>
                     </div>
                    <i>{todo.day ? todo.day : ''}</i>
                 </Link>
             </span>
-            {/* <button className="rm" onClick={ removeTodo.bind(null, todo.id) }>&times;</button> */}
         </li>
     )
 }

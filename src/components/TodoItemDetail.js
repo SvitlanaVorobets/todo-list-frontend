@@ -2,7 +2,40 @@ import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom"; 
 import TodoItemService from "../services/TodoItemService";
 import CategoryService from "../services/CategoryService";
-import { Form } from "react-bootstrap";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import * as ReactBootstrap from "react-bootstrap";
+
+const regExp = RegExp(
+    /^[a-zA-Z0-9 ]*$/
+)
+
+const validName = value => {
+    if (value.trim() && !regExp.test(value)) {
+      return (
+        <div className="alert alert-danger" role="alert">
+          This is not a valid name.
+        </div>
+      );
+    }
+  };
+
+  
+function checkDate(day){
+    const today = new Date();
+    today.setDate(today.getDate() - 1)
+    return new Date(day).getTime() < today.getTime();
+}
+
+const validTime = day =>{
+    if(checkDate(day)) {
+        return (
+            <div className="alert alert-danger" role="alert">
+              This is not a valid day.
+            </div>
+          );
+    }
+}
 
 function TodoItemDetail() {
     const [todo, setTodo] = useState({});
@@ -37,36 +70,37 @@ function TodoItemDetail() {
     }
 
     function deleteTodo(){
-        console.log("work")
         TodoItemService.deleteTodo(todoId).then(() => {
             window.location.href = "/category"
         })
     }
 
-    function editTodo(){
+    function editTodo(event){
+        event.preventDefault()
         const userId = JSON.parse(localStorage.getItem('user')).id;
-        console.log(time)
-        TodoItemService.editTodo({ id: todoId, title: text, completed: false, user_id: userId, category_id: val, day: time}).then(() => {
-            window.location.href = "/category"
-        })
+        if(text && regExp.test(text) && !checkDate(time)){
+            TodoItemService.editTodo({ id: todoId, title: text, completed: false, user_id: userId, category_id: val, day: time}).then(() => {
+                window.location.href = "/category"
+            })
+        }
     }
 
     return(
-        <><p className="title">Todo Item Detail</p>
-        <input className="form-control" value={text} type="text" id="text" name="text" onChange={(e) => setText(e.target.value)}/>
+        <Form><p className="title">Todo Item Detail</p>
+        <Input className="form-control" value={text} type="text" id="text" name="text" onChange={(e) => setText(e.target.value)} validations={[validName]}/>
         <div className="mob-d-flex">
-            <input value={time} type="date" id="time" name="time" onChange={(e) => setTime(e.target.value)} className="mar-right time-input"/>
-            <Form.Select className="mar-right" value={val} onChange={(e) => setVal(e.target.value)}>
+            <Input value={time} type="date" id="time" name="time" onChange={(e) => setTime(e.target.value)} className="mar-right time-input" validations={[validTime]}/>
+            <ReactBootstrap.Form.Select className="mar-right" value={val} onChange={(e) => setVal(e.target.value)}>
                 <option key={0} value={0}>WithoutCategory</option>
                 {options.map((o) => {
                     const { name, id } = o;
                     return <option key={id} value={id}>{name}</option>;
                 })}
-            </Form.Select>
+            </ReactBootstrap.Form.Select>
             <button className="btn btn-dark btn-block mar-right" onClick={editTodo}>Edit</button>
             <button className="btn btn-dark btn-block" onClick={deleteTodo}>Delete</button>
         </div>
-        </>
+        </Form>
     )
 }
 
