@@ -348,6 +348,27 @@ footer{
   }
 
   .dark-back{
-    padding: 100px 0;
+    padding: 100px 10px;
+  }
+
+  .text-second-img{
+    margin: auto 10px;
+    font-size: 16px;
+  }
+
+  .text-right, .text-left{
+    text-align: center;
+  }
+
+  .navbar-brand{
+    margin-right: 0 !important;
+  }
+
+  .flex-mod-column-reverse{
+    flex-direction: column-reverse;
+  }
+
+  .swiper-button-next, .swiper-button-prev{
+    display: none !important;
   }
 }

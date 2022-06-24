@@ -53,14 +53,14 @@ export default class Home extends Component {
         </div>
       </div>
       <div className="container">
-        <div className="mob-d-flex m-5">
+        <div className="mob-d-flex m-lg-5 m-3">
           <div className="description-text">
             <h3>Why do you need this organizer?</h3>
             <p>The pace of modern life is much faster, and the web system just helps to optimize the distribution of time and tasks and facilitate control over a large amount of information.</p>
           </div>
           <img src={require('../assets/dev-life.jpg')} ></img>
         </div>
-        <div className="mob-d-flex m-5">
+        <div className="mob-d-flex m-lg-5 m-3 flex-mod-column-reverse">
           <img src={require('../assets/papers.jpg')} ></img>
           <div className="description-text">
             <h3>Time management is important</h3>
@@ -85,16 +85,27 @@ export default class Home extends Component {
       <div className="container">
         <h3 className="mb-5">What does ''YOUR ORGANIZER'' offer?</h3>
         <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
+          spaceBetween={50}
+          slidesPerView={3}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            600: {
+              slidesPerView: 1,
+            },
+            900: {
+              slidesPerView: 3,
+            },
+          }}
         >
           <SwiperSlide className="SwiperSlide">
             <h5>1. Create/read/update/delete todos and marking them completed</h5>
@@ -122,7 +133,7 @@ export default class Home extends Component {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Is this web system free?</Typography>
+            <Typography>Is this web system completely free or I need to pay?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
