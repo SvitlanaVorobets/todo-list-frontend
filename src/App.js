@@ -110,7 +110,7 @@ class App extends Component {
           )}
         </nav>
 
-        <div className="container mt-3">
+        <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

@@ -175,7 +175,6 @@ code {
 }
 
 .home-title{
-  margin-top: 150px;
   margin-bottom: 50px;
 }
 
@@ -210,6 +209,18 @@ code {
   height: 38px !important;
   white-space: nowrap;
   width: 100%;
+  margin-bottom: 30px;
+}
+
+.btn-home{
+  width: 200px;
+  margin-top: 50px;
+}
+
+.btn-home:hover{
+  background-color: gainsboro !important;
+  color: black !important;
+  font-weight: bold;
 }
 
 .btn-category{
@@ -251,6 +262,74 @@ code {
   font-weight: 700;
 }
 
+.main-img{
+  background-image: url('assets/table.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.dark-back{
+  background-color: black;
+  opacity: .6;
+  height: 100%;
+  color: white;
+  padding: 180px 0;
+}
+
+.description-text{
+  margin: auto 30px;
+}
+
+.second-img{
+  background-image: url('assets/people.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  background-attachment: fixed;
+  margin: 100px auto;
+}
+
+.text-second-img{
+  margin: auto 100px;
+  font-size: 24px;
+}
+
+.SwiperSlide{
+  height: 200px !important;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  color: #212529 !important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #212529 !important;
+}
+
+footer{
+  background-color: #212529;
+  padding: 30px 0;
+  color: #fff; 
+  margin-top: 50px;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
 @media screen and (max-width: 900px){
   .navbar{
     flex-direction: column;
@@ -266,5 +345,9 @@ code {
 
   .form-select{
     margin-left: 0;
+  }
+
+  .dark-back{
+    padding: 100px 0;
   }
 }

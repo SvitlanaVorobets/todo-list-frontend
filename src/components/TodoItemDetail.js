@@ -86,7 +86,7 @@ function TodoItemDetail() {
     }
 
     return(
-        <Form><p className="title">Todo Item Detail</p>
+        <Form className="container"><p className="title">Todo Item Detail</p>
         <Input className="form-control" value={text} type="text" id="text" name="text" onChange={(e) => setText(e.target.value)} validations={[validName]}/>
         <div className="mob-d-flex">
             <Input value={time} type="date" id="time" name="time" onChange={(e) => setTime(e.target.value)} className="mar-right time-input" validations={[validTime]}/>

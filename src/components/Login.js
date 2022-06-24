@@ -69,7 +69,7 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div className="col-md-12">
+      <div className="col-md-12 container">
         <h3 className="title">Login Page</h3>
         <div className="card card-container">
           <Form
